@@ -16,15 +16,15 @@ public class MySQLAccess {
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the test DataBase - EVERYONE HAS ACCESS, PLEASE BE CAREFUL!!
             // Obviously, if you were distributing this file, you would not include the username and password. There are other ways...
-            connect = DriverManager.getConnection("jdbc:mysql://mrbartucz.com/CS485?user=CS485&password=WinonaState");
-            
+            connect = DriverManager.getConnection("jdbc:mysql://mrbartucz.com/av6352tk?user=av6352tk&password=Buddha414!");
+
             // if you want to connect to your local machine:
             // connect = DriverManager.getConnection("jdbc:mysql://localhost/MyDatabaseName?user=MyUserName&password=MyPassword");
 
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
             // Result set get the result of the SQL query
-            resultSet = statement.executeQuery("select * from CS485.Students");
+            resultSet = statement.executeQuery("select * from  av6352tk_University.Students");
             writeResultSet(resultSet);
 
         } catch (Exception e) {
@@ -43,13 +43,15 @@ public class MySQLAccess {
             // which starts at 1
             // e.g. resultSet.getSTring(2);
             String studentID = resultSet.getString("StudentID");
-            String firstName = resultSet.getString("FirstName");
-            String lastName = resultSet.getString("LastName");
-            String age = resultSet.getString("Age");
+            String firstName = resultSet.getString("Name");
+            String phone = resultSet.getString("Phone Number");
+            //String lastName = resultSet.getString("LastName");
+            //String age = resultSet.getString("Age");
             System.out.println("StudentID: " + studentID);
-            System.out.println("First Name: " + firstName);
-            System.out.println("Last Name: " + lastName);
-            System.out.println("Age: " + age);
+            System.out.println("Name: " + firstName);
+            System.out.println("Phone Number: " + phone);
+            //System.out.println("Last Name: " + lastName);
+            //System.out.println("Age: " + age);
         }
     }
 
